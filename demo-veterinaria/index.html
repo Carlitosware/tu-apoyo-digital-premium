@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Huellas & Estilo — Clínica veterinaria y estética canina profesional. Servicios de baño, corte de pelo y atención médica para tu mascota." />
+  <title>Huellas & Estilo · Veterinaria y Estética Canina (Demo)</title>
+  
+  <!-- FUENTES DE GOOGLE:
+       Usamos 'Outfit' para títulos modernos y 'Nunito' para textos generales.
+       Nunito es una tipografía redondeada y amigable, perfecta para temas de mascotas. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- Enlace a la hoja de estilos de la demo -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ==========================================
+       1. CABECERA (NAVBAR)
+       El contenedor 'nav' tiene posición fija en la parte superior.
+       'container' ayuda a mantener centrados los elementos.
+       ========================================== -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <!-- LOGO: Combina un icono con el nombre comercial -->
+      <a href="#inicio" class="nav__logo">
+        <div class="nav__logo-icon">🐾</div>
+        <span>Huellas & <strong>Estilo</strong></span>
+      </a>
+
+      <!-- ENLACES DE NAVEGACIÓN -->
+      <nav class="nav__links" id="navLinks">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#cotizador">Calculador Estética</a>
+        <a href="#contacto" class="btn btn--nav">Agendar Cita</a>
+      </nav>
+
+      <!-- BOTÓN HAMBURGUESA (Móviles) -->
+      <button class="nav__burger" id="burger" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       2. HERO SECTION (BIENVENIDA)
+       Una presentación llamativa con título grande (H1), 
+       descripción, llamadas a la acción (CTA) y la imagen
+       del perrito feliz que generamos anteriormente.
+       ========================================== -->
+  <section class="hero" id="inicio">
+    <div class="container hero__inner">
+      
+      <!-- Lado izquierdo: Textos y botones -->
+      <div class="hero__text">
+        <div class="hero__badge">
+          <span class="badge-dot"></span>
+          ¡Estética Canina con 15% de Descuento en tu primera visita!
+        </div>
+        <h1>Cuidado profesional con amor para tu mejor amigo</h1>
+        <p class="hero__desc">
+          En <strong>Huellas & Estilo</strong> consentimos a tu mascota. Ofrecemos estética de primer nivel, consultas médicas y cuidados personalizados en un ambiente seguro y relajante.
+        </p>
+        <div class="hero__cta">
+          <a href="#cotizador" class="btn btn--primary">Cotizar Estética →</a>
+          <a href="#servicios" class="btn btn--secondary">Ver Servicios</a>
+        </div>
+      </div>
+
+      <!-- Lado derecho: Imagen de la mascota generada -->
+      <div class="hero__visual">
+        <div class="hero__image-wrapper">
+          <img src="assets/images/grooming_hero.png" alt="Perrito feliz en estética canina" class="hero__img" />
+          <!-- Decoración flotante para darle un look dinámico -->
+          <div class="hero__floating-card">
+            <span class="floating-emoji">🧼</span>
+            <div>
+              <strong>Estética Premium</strong>
+              <small>Productos 100% biodegradables</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       3. SECCIÓN DE SERVICIOS
+       Tarjetas con diseño "glassmorphism" o bordes suaves,
+       mostrando de forma clara qué hace la clínica.
+       ========================================== -->
+  <section class="servicios" id="servicios">
+    <div class="container">
+      
+      <!-- Encabezado de la sección -->
+      <div class="section-head centered reveal">
+        <div class="section-eyebrow">Nuestra Clínica</div>
+        <h2>Servicios diseñados para su bienestar</h2>
+        <p class="section-desc">Atención médica preventiva y estilismo profesional para que tu compañero siempre luzca y se sienta de maravilla.</p>
+      </div>
+
+      <!-- Cuadrícula de tarjetas -->
+      <div class="svc-grid">
+
+        <!-- Tarjeta 1: Estética Canina -->
+        <div class="svc-card reveal">
+          <div class="svc-icon orange">✂️</div>
+          <h3>Estética & Peluquería</h3>
+          <p>Baño spa, corte de pelo según la raza, cepillado profundo, corte de uñas y limpieza de oídos con productos hipoalergénicos.</p>
+          <div class="svc-tags">
+            <span>Baño Spa</span><span>Corte de Raza</span><span>Cuidado de Uñas</span>
+          </div>
+        </div>
+
+        <!-- Tarjeta 2: Consulta Veterinaria -->
+        <div class="svc-card reveal">
+          <div class="svc-icon blue">🩺</div>
+          <h3>Consulta Veterinaria</h3>
+          <p>Revisiones generales, diagnóstico oportuno, control de peso y asesoramiento nutricional por médicos titulados y empáticos.</p>
+          <div class="svc-tags">
+            <span>Medicina Preventiva</span><span>Nutrición</span><span>Chequeos</span>
+          </div>
+        </div>
+
+        <!-- Tarjeta 3: Vacunación & Desparasitación -->
+        <div class="svc-card reveal">
+          <div class="svc-icon teal">💉</div>
+          <h3>Vacunas y Prevención</h3>
+          <p>Esquemas de vacunación completos para cachorros y adultos. Desparasitaciones internas y externas efectivas contra pulgas y garrapatas.</p>
+          <div class="svc-tags">
+            <span>Rabia</span><span>Sextuple</span><span>Antipulgas</span>
+          </div>
+        </div>
+
+        <!-- Tarjeta 4: Guardería por Día -->
+        <div class="svc-card reveal">
+          <div class="svc-icon purple">🏡</div>
+          <h3>Guardería de Día</h3>
+          <p>¿Tienes que salir? Deja a tu perrito en nuestro espacio recreativo donde socializará, jugará y descansará bajo supervisión constante.</p>
+          <div class="svc-tags">
+            <span>Socialización</span><span>Juegos</span><span>Supervisión</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       4. COTIZADOR INTERACTIVO DE ESTÉTICA
+       Esta sección interactiva permite al usuario estimar
+       el costo de la estética de su mascota al instante.
+       Es un excelente demostrador de interactividad JavaScript.
+       ========================================== -->
+  <section class="cotizador" id="cotizador">
+    <div class="container">
+      <div class="section-head centered reveal">
+        <div class="section-eyebrow">Simulador de Precios</div>
+        <h2>Cotiza la Estética de tu Mascota</h2>
+        <p class="section-desc">Selecciona las características de tu perrito y servicios adicionales para obtener un costo estimado al instante.</p>
+      </div>
+
+      <div class="cotizador__wrap reveal">
+        <div class="cotizador__card">
+          
+          <form id="calculatorForm">
+            <!-- Paso 1: Tamaño de la Mascota -->
+            <div class="calc-group">
+              <label class="calc-label">1. Tamaño del perrito:</label>
+              <div class="calc-options-grid">
+                <label class="calc-option">
+                  <input type="radio" name="dogSize" value="chico" checked />
+                  <span class="calc-option-content">
+                    <span class="opt-emoji">🐶</span>
+                    <strong>Chico</strong>
+                    <small>Hasta 10 kg (ej. Poodle, Chihuahua)</small>
+                  </span>
+                </label>
+
+                <label class="calc-option">
+                  <input type="radio" name="dogSize" value="mediano" />
+                  <span class="calc-option-content">
+                    <span class="opt-emoji">🐕</span>
+                    <strong>Mediano</strong>
+                    <small>10 a 22 kg (ej. Cocker, Schnauzer)</small>
+                  </span>
+                </label>
+
+                <label class="calc-option">
+                  <input type="radio" name="dogSize" value="grande" />
+                  <span class="calc-option-content">
+                    <span class="opt-emoji">🦮</span>
+                    <strong>Grande</strong>
+                    <small>22 a 40 kg (ej. Golden, Pastor Alemán)</small>
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Paso 2: Tipo de Pelo -->
+            <div class="calc-group">
+              <label for="hairType" class="calc-label">2. Tipo de Manto/Pelo:</label>
+              <select id="hairType" class="form-select">
+                <option value="corto">Corto (ej. Pug, Beagle) - Sin costo extra</option>
+                <option value="medio">Medio/Doble Capa (ej. Husky) - +$50 MXN</option>
+                <option value="largo">Largo / Propenso a nudos (ej. Maltés, Yorkie) - +$100 MXN</option>
+              </select>
+            </div>
+
+            <!-- Paso 3: Adicionales -->
+            <div class="calc-group">
+              <label class="calc-label">3. Servicios Premium Adicionales:</label>
+              <div class="checkbox-grid">
+                <label class="checkbox-item">
+                  <input type="checkbox" id="dental" value="60" />
+                  <span>Cepillado Dental (+ $60 MXN)</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" id="medicated" value="80" />
+                  <span>Baño de Avena / Medicado (+ $80 MXN)</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" id="flea" value="100" />
+                  <span>Tratamiento Antipulgas Preventivo (+ $100 MXN)</span>
+                </label>
+              </div>
+            </div>
+          </form>
+
+          <!-- Resultados dinámicos del cotizador -->
+          <div class="cotizador__result">
+            <div class="result-details">
+              <h3>Tu Resumen de Cotización</h3>
+              <p id="calcSummary">Servicio de estética básica para perro chico.</p>
+            </div>
+            <div class="result-price-box">
+              <span class="price-label">Precio Estimado</span>
+              <span class="price-value" id="calcPrice">$250 MXN</span>
+              <a href="#contacto" class="btn btn--primary btn--sm" id="btnBookFromCalc">Reservar con este precio</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       5. CONTACTO Y FORMULARIO DE AGENDADO
+       Para recibir datos de citas, los inputs están
+       claramente etiquetados.
+       ========================================== -->
+  <section class="contacto" id="contacto">
+    <div class="container">
+      <div class="section-head centered reveal">
+        <div class="section-eyebrow">Contacto & Citas</div>
+        <h2>Agenda una Visita</h2>
+        <p class="section-desc">Escríbenos o llena el formulario para programar la estética de tu peludo. ¡Te responderemos de inmediato!</p>
+      </div>
+
+      <div class="contacto__grid">
+        
+        <!-- Tarjeta de información de contacto -->
+        <div class="contacto__info reveal">
+          <div class="info-card">
+            <h3>¡Visítanos o Escríbenos!</h3>
+            <p>Estamos ubicados en una zona accesible y contamos con estacionamiento para que bajes cómodamente a tu mascota.</p>
+            
+            <div class="datos">
+              <div class="dato">
+                <div class="dato-icon orange">📞</div>
+                <div>
+                  <div class="dato-label">WhatsApp</div>
+                  <div class="dato-value">55 1234 5678</div>
+                </div>
+              </div>
+              <div class="dato">
+                <div class="dato-icon orange">📍</div>
+                <div>
+                  <div class="dato-label">Ubicación</div>
+                  <div class="dato-value">Av. Paseo de las Mascotas #123, CDMX</div>
+                </div>
+              </div>
+              <div class="dato">
+                <div class="dato-icon orange">🕒</div>
+                <div>
+                  <div class="dato-label">Horario</div>
+                  <div class="dato-value">Lun - Sáb: 9:00 AM - 6:00 PM</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulario de Agendado -->
+        <div class="contacto__form-wrap reveal">
+          <form class="contacto__form" id="vetAppointmentForm" novalidate>
+            
+            <div class="form-row">
+              <div class="form-group" id="g-nombre-propietario">
+                <label for="nombrePropietario">Tu Nombre *</label>
+                <input type="text" id="nombrePropietario" placeholder="Ej. Carlos Mendoza" required />
+                <span class="ferr">Por favor ingresa tu nombre</span>
+              </div>
+              
+              <div class="form-group" id="g-nombre-mascota">
+                <label for="nombreMascota">Nombre de tu Mascota *</label>
+                <input type="text" id="nombreMascota" placeholder="Ej. Max" required />
+                <span class="ferr">¿Cómo se llama tu mascota?</span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group" id="g-telefono">
+                <label for="telefono">WhatsApp / Celular *</label>
+                <input type="tel" id="telefono" placeholder="Ej. 5512345678" required />
+                <span class="ferr">Se requiere un número válido</span>
+              </div>
+              
+              <div class="form-group" id="g-servicio-deseado">
+                <label for="servicioDeseado">Servicio de Interés *</label>
+                <select id="servicioDeseado" required>
+                  <option value="">Selecciona uno...</option>
+                  <option value="estetica">Estética y Peluquería Canina</option>
+                  <option value="consulta">Consulta Veterinaria</option>
+                  <option value="vacunas">Vacunación y Desparasitación</option>
+                  <option value="guarderia">Guardería de Día</option>
+                </select>
+                <span class="ferr">Selecciona un servicio</span>
+              </div>
+            </div>
+
+            <div class="form-group" id="g-mensaje">
+              <label for="mensaje">Comentarios Adicionales (raza, temperamento o condiciones de salud)</label>
+              <textarea id="mensaje" rows="3" placeholder="Ej. Es un Poodle miniatura, un poco nervioso con el secador."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary" style="width: 100%; padding: 1rem;">Confirmar Solicitud de Cita</button>
+            
+            <!-- Mensaje de éxito dinámico -->
+            <div class="form-success" id="appointmentSuccess">
+              🎉 ¡Solicitud enviada con éxito! Nos comunicaremos contigo por WhatsApp para confirmar la fecha y hora.
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       6. PIE DE PÁGINA (FOOTER)
+       ========================================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <div class="nav__logo-icon" style="width: 30px; height: 30px; font-size: 0.8rem;">🐾</div>
+        <span>Huellas & Estilo</span>
+      </div>
+      <p class="footer__copy">© 2026 Huellas & Estilo · Clínica Veterinaria Ficticia (Página Demo).</p>
+      <nav class="footer__links">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#cotizador">Cotizar</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Enlace al archivo de lógica JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

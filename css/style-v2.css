@@ -11,36 +11,47 @@
    ============================================================ */
 
 :root {
-  /* ---- COLORES — edita aquí para cambiar toda la paleta ---- */
-  --blue:          #0067B8;   /* azul Microsoft — color principal */
-  --blue-dark:     #004E8C;   /* azul más oscuro — hover de botones */
-  --blue-light:    #EBF3FB;   /* azul muy claro — fondos de íconos */
-  --purple:        #5C2D91;   /* púrpura — acento secundario */
-  --purple-light:  #F0EAF9;
-  --teal:          #007A6E;
-  --teal-light:    #E0F3F1;
-  --orange:        #D83B01;
-  --orange-light:  #FDE8DF;
+  /* ---- COLORES PREMIUM — Estética "Friendly & Professional Trust" ---- */
+  --blue:          #2563EB;   /* Azul rey profundo (confianza y seriedad) */
+  --blue-dark:     #1D4ED8;   /* Azul rey más oscuro */
+  --blue-light:    rgba(37, 99, 235, 0.06); /* Acento azul suave */
+  
+  --purple:        #7C3AED;   /* Violeta corporativo */
+  --purple-light:  rgba(124, 58, 237, 0.06);
+  
+  --teal:          #10B981;   /* Verde esmeralda (éxito, crecimiento y accesibilidad) */
+  --teal-light:    rgba(16, 185, 129, 0.06);
+  
+  --orange:        #F59E0B;   /* Ámbar amigable */
+  --orange-light:  rgba(245, 158, 11, 0.06);
 
-  --bg:            #FFFFFF;   /* fondo principal */
-  --bg-alt:        #F5F5F5;   /* fondo de secciones alternas */
-  --bg-dark:       #0A0A14;   /* fondo oscuro del hero */
-  --surface:       #FFFFFF;
-  --border:        #E0E0E0;
-  --text:          #1A1A1A;   /* texto principal */
-  --text-muted:    #5A5A5A;   /* texto secundario */
-  --text-light:    #8A8A8A;
+  /* ---- FONDO Y SUPERFICIES (Premium Light Mode) ---- */
+  --bg:            #FFFFFF;   /* Blanco puro y limpio */
+  --bg-alt:        #F8FAFC;   /* Gris pizarra ultra suave para alternancia */
+  --bg-dark:       #0F172A;   /* Azul marino profundo (exclusivo para el Hero de portada) */
+  --surface:       #FFFFFF;   /* Tarjetas blancas puras */
+  --surface-hover: #F8FAFC;
+  --border:        #E2E8F0;   /* Bordes muy sutiles y limpios */
+  --border-focus:  #3B82F6;   /* Borde azul enfocado */
+  
+  /* ---- TEXTO ---- */
+  --text:          #0F172A;   /* Slate oscuro premium de excelente contraste */
+  --text-muted:    #475569;   /* Slate medio para lectura cómoda */
+  --text-light:    #64748B;   /* Slate claro para detalles */
 
   /* ---- TIPOGRAFÍA ---- */
   --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-title: 'Outfit', 'Inter', sans-serif;
 
   /* ---- FORMA Y SOMBRAS ---- */
-  --radius-sm:  6px;
-  --radius-md:  10px;
-  --radius-lg:  16px;
-  --shadow-sm:  0 1px 4px rgba(0,0,0,0.06);
-  --shadow-md:  0 4px 20px rgba(0,0,0,0.08);
-  --shadow-lg:  0 12px 40px rgba(0,0,0,0.10);
+  --radius-sm:  8px;
+  --radius-md:  12px;
+  --radius-lg:  20px;
+  --shadow-sm:  0 2px 8px rgba(15, 23, 42, 0.04);
+  --shadow-md:  0 10px 30px rgba(15, 23, 42, 0.06);
+  --shadow-lg:  0 20px 50px rgba(15, 23, 42, 0.08);
+  --glow-blue:  0 0 20px rgba(37, 99, 235, 0.1);
+  --glow-purple: 0 0 20px rgba(124, 58, 237, 0.1);
 
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --max-w: 1100px;
@@ -57,9 +68,10 @@ img { max-width: 100%; display: block; }
 .container { width: 100%; max-width: var(--max-w); margin: 0 auto; padding: 0 clamp(1rem, 2.5vw, 1.5rem); }
 
 /* ---- TIPOGRAFÍA ---- */
-h1 { font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; color: var(--text); }
-h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; color: var(--text); }
-h3 { font-size: 1.1rem; font-weight: 600; line-height: 1.3; color: var(--text); }
+h1, h2, h3 { font-family: var(--font-title); }
+h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; color: var(--text); }
+h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; color: var(--text); }
+h3 { font-size: 1.2rem; font-weight: 600; line-height: 1.3; color: var(--text); }
 p  { color: var(--text-muted); line-height: 1.8; font-size: 0.97rem; }
 
 /* ---- BOTONES ---- */
@@ -72,13 +84,13 @@ p  { color: var(--text-muted); line-height: 1.8; font-size: 0.97rem; }
   white-space: nowrap;
 }
 .btn--primary  { background: var(--blue); color: #fff; }
-.btn--primary:hover  { background: var(--blue-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,103,184,0.3); }
+.btn--primary:hover  { background: var(--blue-dark); transform: translateY(-1.5px); box-shadow: 0 4px 16px rgba(37, 99, 235, 0.25); }
 .btn--secondary { background: transparent; color: var(--blue); border-color: var(--blue); }
-.btn--secondary:hover { background: var(--blue-light); }
+.btn--secondary:hover { background: var(--blue-light); transform: translateY(-1px); }
 .btn--outline  { background: transparent; color: var(--text-muted); border-color: var(--border); }
 .btn--outline:hover  { border-color: var(--blue); color: var(--blue); }
-.btn--nav { background: var(--blue); color: #fff; padding: 0.5rem 1.2rem; font-size: 0.85rem; }
-.btn--nav:hover { background: var(--blue-dark); }
+.btn--nav { background: var(--blue); color: #fff; padding: 0.5rem 1.2rem; font-size: 0.85rem; border-radius: var(--radius-sm); }
+.btn--nav:hover { background: var(--blue-dark); box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2); }
 .btn--sm { padding: 0.5rem 1.1rem; font-size: 0.83rem; }
 
 /* ---- SECCIÓN HEADER COMÚN ---- */
@@ -99,12 +111,12 @@ p  { color: var(--text-muted); line-height: 1.8; font-size: 0.97rem; }
    ============================================================ */
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-  background: rgba(255,255,255,0.95); backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   padding: 0;
-  transition: box-shadow 0.2s;
+  transition: box-shadow 0.3s, background-color 0.3s;
 }
-.nav.scrolled { box-shadow: var(--shadow-md); }
+.nav.scrolled { box-shadow: var(--shadow-md); background: rgba(255, 255, 255, 0.95); }
 .nav__inner {
   display: flex; align-items: center; justify-content: space-between;
   height: 64px;
@@ -145,8 +157,9 @@ p  { color: var(--text-muted); line-height: 1.8; font-size: 0.97rem; }
   .nav__links {
     display: none; position: absolute; top: 65px; left: 0; right: 0;
     flex-direction: column; align-items: stretch; gap: 0;
-    background: #fff; border-bottom: 1px solid var(--border);
+    background: var(--bg-alt); border-bottom: 1px solid var(--border);
     box-shadow: var(--shadow-md); padding: 0.5rem 1rem 1rem;
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
   }
   .nav__links.open { display: flex; }
   .nav__links a { font-size: 0.95rem; padding: 0.75rem 0.5rem; border-bottom: 1px solid var(--border); border-radius: 0; }
@@ -260,14 +273,31 @@ p  { color: var(--text-muted); line-height: 1.8; font-size: 0.97rem; }
   gap: 1.25rem;
 }
 .svc-card {
-  background: var(--bg); border: 1px solid var(--border);
+  background: var(--surface); border: 1px solid var(--border);
   border-radius: var(--radius-lg); padding: 1.75rem;
-  transition: border-color 0.2s, box-shadow 0.2s, transform 0.25s var(--ease);
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s, transform 0.3s var(--ease);
   display: flex; flex-direction: column;
+  position: relative; overflow: hidden;
 }
-.svc-card:hover { border-color: var(--blue); box-shadow: var(--shadow-md); transform: translateY(-3px); }
-.svc-card--cta { background: var(--blue-light); border-color: transparent; align-items: center; justify-content: center; text-align: center; }
-.svc-card--cta:hover { border-color: var(--blue); }
+.svc-card:hover { 
+  border-color: rgba(37, 99, 235, 0.3); 
+  box-shadow: var(--shadow-md); 
+  background: var(--surface-hover);
+  transform: translateY(-5px); 
+}
+.svc-card--cta { 
+  background: rgba(37, 99, 235, 0.02); 
+  border-color: rgba(37, 99, 235, 0.1); 
+  align-items: center; 
+  justify-content: center; 
+  text-align: center; 
+}
+.svc-card--cta:hover { 
+  border-color: var(--blue); 
+  background: rgba(37, 99, 235, 0.05);
+  box-shadow: var(--shadow-sm);
+}
 .svc-card__cta-inner { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
 .cta-icon { width: 52px; height: 52px; border-radius: 50%; background: var(--blue); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
 .svc-card__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; }
@@ -306,9 +336,14 @@ p  { color: var(--text-muted); line-height: 1.8; font-size: 0.97rem; }
   background: var(--surface); border: 1px solid var(--border);
   border-radius: var(--radius-lg); overflow: hidden;
   box-shadow: var(--shadow-sm);
-  transition: box-shadow 0.25s, transform 0.25s var(--ease);
+  transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s, transform 0.3s var(--ease);
 }
-.proj-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+.proj-card:hover { 
+  border-color: rgba(37, 99, 235, 0.2);
+  box-shadow: var(--shadow-md); 
+  background: var(--surface-hover);
+  transform: translateY(-6px); 
+}
 .proj-banner {
   height: 200px; position: relative;
   display: flex; align-items: center; justify-content: center;
@@ -421,14 +456,18 @@ p  { color: var(--text-muted); line-height: 1.8; font-size: 0.97rem; }
 .form-group select,
 .form-group textarea {
   width: 100%; padding: 0.72rem 1rem;
-  background: var(--bg-alt); border: 1.5px solid var(--border);
+  background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border);
   border-radius: var(--radius-sm); font-family: var(--font);
   font-size: 0.92rem; color: var(--text); outline: none; appearance: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
 }
 .form-group input:focus,
 .form-group select:focus,
-.form-group textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(0,103,184,0.1); }
+.form-group textarea:focus { 
+  border-color: var(--blue); 
+  box-shadow: 0 0 0 3px rgba(0, 242, 254, 0.15); 
+  background: rgba(255, 255, 255, 0.04);
+}
 .form-group input.err,
 .form-group select.err,
 .form-group textarea.err { border-color: #dc2626; }
