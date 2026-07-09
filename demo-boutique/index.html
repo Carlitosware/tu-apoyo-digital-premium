@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Boutique Norma - Catálogo interactivo de bolsas, mochilas y monederos. Pide directamente por WhatsApp.">
+  <title>Boutique Norma · Bolsas & Accesorios</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- AVISO DE SITIO DEMOSTRATIVO -->
+  <div class="demo-banner">
+    <span>✨ Esta es una página muestra creada por <strong>Tu Apoyo Digital</strong> para simular el funcionamiento de ventas por WhatsApp.</span>
+  </div>
+
+  <!-- ENCABEZADO / NAVBAR -->
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a href="#inicio" class="navbar__logo">
+        <span class="logo-circle">BN</span>
+        <span class="logo-text">Boutique <strong>Norma</strong></span>
+      </a>
+      
+      <nav class="navbar__links" id="navbarLinks">
+        <a href="#inicio">Inicio</a>
+        <a href="#youtube">Visto en YouTube</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#captura-helper">Apartar con Captura</a>
+      </nav>
+
+      <div class="navbar__actions">
+        <button class="cart-btn" id="cartToggle" aria-label="Ver carrito">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cart-icon"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-badge" id="cartCount">0</span>
+        </button>
+        <button class="burger-btn" id="burgerToggle" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero" id="inicio">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <div class="hero__tag">📍 Envíos a todo México desde el Centro de la CDMX</div>
+          <h1>Bolsas y mochilas en tendencia para ti</h1>
+          <p class="hero__desc">Explora nuestro catálogo exclusivo. Si viste algún modelo en nuestros videos de YouTube, encuéntralo aquí y pídelo al instante por WhatsApp.</p>
+          <div class="hero__ctas">
+            <a href="#catalogo" class="btn btn--primary">Ver catálogo completo</a>
+            <a href="#youtube" class="btn btn--secondary">Buscar lo visto en YouTube</a>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <div class="showcase-card">
+            <div class="showcase-tag">Lo más vendido</div>
+            <div class="showcase-circle"></div>
+            <div class="showcase-info">
+              <h3>Bolsa Sofía Elegante</h3>
+              <p>$450.00 MXN</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN VISTO EN YOUTUBE -->
+    <section class="youtube" id="youtube">
+      <div class="container">
+        <div class="section-title">
+          <h2>Visto en YouTube 🎥</h2>
+          <p>¿Viste un video de Boutique Norma y te gustó un modelo? Selecciona el video abajo para ver los productos exactos que mostramos en esa fecha.</p>
+        </div>
+
+        <div class="video-grid" id="videoGrid">
+          <!-- Los videos se cargarán dinámicamente con JavaScript -->
+        </div>
+
+        <!-- Vista de productos del video seleccionado -->
+        <div class="video-products-box hidden" id="videoProductsBox">
+          <div class="video-products-header">
+            <h3>Productos mostrados en el video: <span id="selectedVideoTitle"></span></h3>
+            <button class="btn btn--text" id="clearVideoFilter">Mostrar todo el catálogo</button>
+          </div>
+          <div class="video-products-grid" id="videoProductsGrid">
+            <!-- Los productos del video seleccionado se cargarán aquí -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN CATÁLOGO -->
+    <section class="catalog" id="catalogo">
+      <div class="container">
+        <div class="section-title">
+          <h2>Catálogo de Productos</h2>
+          <p>Navega por nuestra selección de bolsas de dama, mochilas escolares y monederos.</p>
+        </div>
+
+        <!-- Buscador y Filtros -->
+        <div class="filter-bar">
+          <div class="search-group">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="searchInput" placeholder="Buscar bolsas, mochilas...">
+          </div>
+          
+          <div class="filter-tags" id="categoryFilters">
+            <button class="filter-tag active" data-category="all">Todos</button>
+            <button class="filter-tag" data-category="bolsas">Bolsas de Dama</button>
+            <button class="filter-tag" data-category="mochilas">Mochilas</button>
+            <button class="filter-tag" data-category="escolares">Mochilas Escolares</button>
+            <button class="filter-tag" data-category="monederos">Monederos</button>
+          </div>
+        </div>
+
+        <!-- Grid de Productos -->
+        <div class="product-grid" id="productGrid">
+          <!-- Los productos se cargarán dinámicamente con JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN ASISTENTE CAPTURAS -->
+    <section class="captura-helper" id="captura-helper">
+      <div class="container">
+        <div class="helper-box">
+          <div class="helper-text">
+            <h2>Aparta tu producto con una captura de pantalla 📸</h2>
+            <p>Si tienes la captura de pantalla de un video de YouTube o de una foto de nuestras redes sociales, sigue estos sencillos pasos para apartarla rápidamente:</p>
+            
+            <ol class="step-list">
+              <li>
+                <div class="step-num">1</div>
+                <div><strong>Sube tu captura de pantalla:</strong> Sube el archivo aquí abajo para simular tu pedido.</div>
+              </li>
+              <li>
+                <div class="step-num">2</div>
+                <div><strong>Elige la categoría y escribe notas:</strong> Selecciona qué tipo de bolsa o mochila es, y describe detalles como color o minuto del video.</div>
+              </li>
+              <li>
+                <div class="step-num">3</div>
+                <div><strong>¡Listo! Copia y envía:</strong> Nuestro sistema redactará tu mensaje de pedido automáticamente para que solo tengas que pegarlo en WhatsApp y adjuntar tu imagen.</div>
+              </li>
+            </ol>
+          </div>
+
+          <div class="helper-card">
+            <h3>Asistente de Apartado</h3>
+            <form id="screenshotForm">
+              <div class="form-group">
+                <label>Paso 1: Sube la captura de pantalla</label>
+                <div class="file-upload-wrapper" id="fileUploadWrapper">
+                  <input type="file" id="screenshotInput" accept="image/*" class="file-upload-input">
+                  <div class="file-upload-design">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32" class="upload-icon"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    <p id="uploadStatusText">Haz clic para subir o arrastra tu captura</p>
+                    <span class="file-info">Formatos aceptados: JPG, PNG</span>
+                  </div>
+                </div>
+                <div class="preview-container hidden" id="previewContainer">
+                  <img id="screenshotPreview" src="#" alt="Vista previa de captura">
+                  <button type="button" class="btn btn--text btn--danger" id="removeScreenshotBtn">Quitar imagen</button>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="helperCategory">Paso 2: Tipo de producto estimado</label>
+                <select id="helperCategory">
+                  <option value="">Selecciona categoría</option>
+                  <option value="Bolsa de Dama">Bolsa de Dama</option>
+                  <option value="Mochila / Pañalera">Mochila / Pañalera</option>
+                  <option value="Mochila Escolar">Mochila Escolar</option>
+                  <option value="Monedero / Accesorio">Monedero / Accesorio</option>
+                  <option value="Otro / No sé">Otro / No sé</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="helperNotes">Detalles adicionales (opcional)</label>
+                <textarea id="helperNotes" rows="2" placeholder="Ej: Es la bolsa roja de hebilla dorada que sale en el minuto 4:15..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn--primary" id="helperSubmitBtn" style="width: 100%;">
+                Paso 3: Generar Mensaje de WhatsApp
+              </button>
+            </form>
+
+            <!-- Resultado del asistente (inicialmente oculto) -->
+            <div class="helper-result hidden" id="helperResult">
+              <div class="result-alert">✓ ¡Mensaje generado con éxito!</div>
+              <p class="result-instructions">Copia el siguiente mensaje y pégalo en el chat junto con tu foto:</p>
+              <div class="text-box" id="generatedText"></div>
+              <div class="result-actions">
+                <button class="btn btn--secondary btn--sm" id="copyTextBtn">Copiar mensaje</button>
+                <a href="#" target="_blank" class="btn btn--primary btn--sm" id="openWaBtn">Abrir WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- CARRITO DE COMPRAS DESPLEGABLE (ASIDE DRAWER) -->
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer__overlay" id="cartOverlay"></div>
+    <div class="cart-drawer__content">
+      <div class="cart-drawer__header">
+        <h2>Mi Carrito</h2>
+        <button class="close-btn" id="cartClose" aria-label="Cerrar carrito">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <!-- Lista de Productos en el Carrito -->
+      <div class="cart-drawer__body" id="cartItemsContainer">
+        <div class="cart-empty-message">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="48" height="48" style="opacity:0.4"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <p>Tu carrito está vacío</p>
+          <a href="#catalogo" class="btn btn--secondary btn--sm" id="closeCartAndShop">Explorar Catálogo</a>
+        </div>
+      </div>
+
+      <!-- Pie del Carrito con Totales y Botón a WhatsApp -->
+      <div class="cart-drawer__footer hidden" id="cartFooter">
+        <div class="cart-total">
+          <span>Monto Total Estimado:</span>
+          <strong id="cartTotalPrice">$0.00</strong>
+        </div>
+        <p class="cart-help-text">Al hacer clic se generará un mensaje de pedido organizado para enviarlo al WhatsApp de Boutique Norma.</p>
+        <button class="btn btn--success btn--block" id="sendOrderWa">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" style="margin-right:8px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Confirmar Pedido por WhatsApp
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="logo-circle">BN</span>
+        <span style="font-weight:600">Boutique Norma</span>
+      </div>
+      <p class="footer__copy">© 2026 Boutique Norma · Demos de Portafolio · Tu Apoyo Digital México.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
